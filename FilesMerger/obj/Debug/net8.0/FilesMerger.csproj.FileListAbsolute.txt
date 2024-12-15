@@ -1,0 +1,15 @@
+C:\Users\user1\Documents\תכנות\Practicode\FilesMerger\FilesMerger\bin\Debug\net8.0\FilesMerger.exe
+C:\Users\user1\Documents\תכנות\Practicode\FilesMerger\FilesMerger\bin\Debug\net8.0\FilesMerger.deps.json
+C:\Users\user1\Documents\תכנות\Practicode\FilesMerger\FilesMerger\bin\Debug\net8.0\FilesMerger.runtimeconfig.json
+C:\Users\user1\Documents\תכנות\Practicode\FilesMerger\FilesMerger\bin\Debug\net8.0\FilesMerger.dll
+C:\Users\user1\Documents\תכנות\Practicode\FilesMerger\FilesMerger\bin\Debug\net8.0\FilesMerger.pdb
+C:\Users\user1\Documents\תכנות\Practicode\FilesMerger\FilesMerger\obj\Debug\net8.0\FilesMerger.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user1\Documents\תכנות\Practicode\FilesMerger\FilesMerger\obj\Debug\net8.0\FilesMerger.AssemblyInfoInputs.cache
+C:\Users\user1\Documents\תכנות\Practicode\FilesMerger\FilesMerger\obj\Debug\net8.0\FilesMerger.AssemblyInfo.cs
+C:\Users\user1\Documents\תכנות\Practicode\FilesMerger\FilesMerger\obj\Debug\net8.0\FilesMerger.csproj.CoreCompileInputs.cache
+C:\Users\user1\Documents\תכנות\Practicode\FilesMerger\FilesMerger\obj\Debug\net8.0\FilesMerger.sourcelink.json
+C:\Users\user1\Documents\תכנות\Practicode\FilesMerger\FilesMerger\obj\Debug\net8.0\FilesMerger.dll
+C:\Users\user1\Documents\תכנות\Practicode\FilesMerger\FilesMerger\obj\Debug\net8.0\refint\FilesMerger.dll
+C:\Users\user1\Documents\תכנות\Practicode\FilesMerger\FilesMerger\obj\Debug\net8.0\FilesMerger.pdb
+C:\Users\user1\Documents\תכנות\Practicode\FilesMerger\FilesMerger\obj\Debug\net8.0\FilesMerger.genruntimeconfig.cache
+C:\Users\user1\Documents\תכנות\Practicode\FilesMerger\FilesMerger\obj\Debug\net8.0\ref\FilesMerger.dll
