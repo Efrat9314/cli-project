@@ -1,117 +1,4 @@
-﻿//using System;
-//using System.CommandLine;
-//using System.Text;
-//var rootCommand = new RootCommand("bundle-command");
-//var bundleCommand = new Command("bundle", "bundle files into one file");
-//var createRspCommand = new Command("create-rsp", "create response file");
-
-//var supportedLanguage = new Dictionary<string, string> {
-//    { "python",".py"},
-//    { "csharp",".cs" },
-//    { "java",".java"},
-//    { "sql",".sql"},
-//    { "js",".js" },
-//    { "css",".css" },
-//    { "html",".html" },
-//    { "cpp",".cpp" },
-//    { "text",".txt" },
-//    };
-//var outputFileOption = new Option<FileInfo>("--output", "file's name and path") { IsRequired = true };
-
-//var languageOption = new Option<string[]>("--language",
-//    "Programming languages to include in the bundle. Use 'all' to include all.")
-//{
-//    AllowMultipleArgumentsPerToken = true,
-//}.FromAmong(supportedLanguage.Keys.Concat(new[] { "all" }).ToArray());
-
-
-//var removeEmptyLinesOption = new Option<bool>("--remove-empty-lines", "remove empty lines befor bundling");
-
-//bundleCommand.AddOption(outputFileOption);
-//bundleCommand.AddOption(languageOption);
-//bundleCommand.AddOption(removeEmptyLinesOption);
-
-//bundleCommand.SetHandler((output, languages,removeLines) =>
-//{
-//    try
-//    {
-//        var selectedExtensions = languages.Contains("all")?supportedLanguage.Values.ToList():languages
-//        .Where(lang => supportedLanguage.ContainsKey(lang))
-//        .Select(lang => supportedLanguage[lang])
-//        .ToList();
-
-//        string currentDirectory = Directory.GetCurrentDirectory();
-//        string [] allFiles = Directory.GetFiles(currentDirectory);
-//        var filteredFiles = allFiles.Where(file => selectedExtensions.Any(ext => file.EndsWith(ext, StringComparison.OrdinalIgnoreCase))).ToList();
-//        StringBuilder allContent = new StringBuilder();
-//        foreach (var file in filteredFiles)
-//        {
-//            string [] contentFile = File.ReadAllLines(file);
-//            if(removeLines)
-//                contentFile=contentFile.Where(line => !string.IsNullOrWhiteSpace(line)).ToArray();
-//            allContent.Append(string.Join('\n',contentFile) + "\n \n");
-//        }
-//        File.WriteAllText(output.FullName, allContent.ToString());
-//        Console.WriteLine("file bundled successfully!");
-//    }
-//    catch (DirectoryNotFoundException ex)
-//    {
-//        Console.WriteLine("Directory Not Found");
-//    }
-
-//}, outputFileOption, languageOption,removeEmptyLinesOption);
-
-//createRspCommand.SetHandler(() =>
-//{
-//    Console.WriteLine("What's the File name for output?");
-//    string fileName = Console.ReadLine();
-
-//    Console.WriteLine("Would you like to include all files? Insert Y or N");
-//    bool allFiles = Console.ReadLine().Equals("Y", StringComparison.OrdinalIgnoreCase);
-
-//    Console.WriteLine("If you don't want to include all files, which languages to include? (separate by space)");
-//    string languages = Console.ReadLine();
-
-//    Console.WriteLine("Would you like to remove empty lines? Insert Y or N");
-//    bool removeLines = Console.ReadLine().Equals("Y", StringComparison.OrdinalIgnoreCase);
-
-//    //sort,note,aouthor
-//    var sb = new StringBuilder();
-//    sb.Append($"bundle --output \"{fileName}\" ");
-
-//    if (allFiles)
-//    {
-//        sb.Append("--language all ");
-//    }
-//    else
-//    {
-//        sb.Append($"--language {languages} ");
-//    }
-
-//    if (removeLines)
-//    {
-//        sb.Append("--remove-empty-lines ");
-//    }
-
-//    string fullCommand = sb.ToString();
-//    Console.WriteLine("What's the File name for the rsponse file?");
-//    string rspName = Console.ReadLine();
-//    string responseFilePath = $"{rspName}.rsp";
-//    File.WriteAllText(responseFilePath, fullCommand);
-//    Console.WriteLine($"Ok! all is done.\n Your job is to type the command: fim {responseFilePath}");
-//});
-
-
-//outputFileOption.AddAlias("--o");
-//languageOption.AddAlias("--l");
-
-//rootCommand.Add(bundleCommand);
-//rootCommand.Add(createRspCommand);
-
-//rootCommand.InvokeAsync(args);
-
-
-using System.CommandLine;
+﻿using System.CommandLine;
 using System.Text;
 
 var supportedLanguages = new Dictionary<string, string> {
@@ -123,7 +10,6 @@ var supportedLanguages = new Dictionary<string, string> {
     {"html",".html" },
     {"c++",".cpp" },
     {"css",".css" },
-    {"all","null" }
 };
 var rootCommand = new RootCommand("bundle files");
 var bundleCommand = new Command("bundle", "bundle files into one file");
@@ -213,13 +99,13 @@ createRspCommand.SetHandler(() =>
     Console.WriteLine("Would you like to put a note Y or N");
     bool note = Console.ReadLine().Equals("Y", StringComparison.OrdinalIgnoreCase);
 
-    Console.WriteLine("Would you like to sort? Insert Y or N");
+    Console.WriteLine("Insert the sort type");
     string sort = Console.ReadLine();
 
     Console.WriteLine("Would you like to remove empty lines? Insert Y or N");
     bool removeLines = Console.ReadLine().Equals("Y", StringComparison.OrdinalIgnoreCase);
 
-    Console.WriteLine("Would you like to put the aouthor? Insert Y or N");
+    Console.WriteLine("Insert the aouthor name");
     string aouthor = Console.ReadLine();
 
     var sb = new StringBuilder();
